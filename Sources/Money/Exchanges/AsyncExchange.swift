@@ -6,7 +6,7 @@ import Foundation
 /// for monetary values of another.
 public protocol AsyncExchange {
     /// Retrieves an exchange rate from the provided `base` and `quote`  currencies.
-    func rate<LHS: Currency, RHS: Currency>(base: LHS, quote: RHS) async throws -> Decimal
+    func rate<Base: Currency, Quote: Currency>(base: Base, quote: Quote) async throws -> Decimal
 }
 
 // MARK: - AsyncExchange + Trading
