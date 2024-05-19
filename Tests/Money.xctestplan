@@ -1,0 +1,25 @@
+{
+  "configurations" : [
+    {
+      "id" : "98F6D491-806A-4481-80D4-B5DCE4221A79",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "MoneyTests",
+        "name" : "MoneyTests"
+      }
+    }
+  ],
+  "version" : 1
+}
