@@ -1,4 +1,4 @@
-# Money
+# 💰 Money
 
 A precise, flexible representation of monetary values in any given currency.
 
