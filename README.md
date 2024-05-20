@@ -1,5 +1,5 @@
 # 💰 Money
-![Build](https://img.shields.io/github/actions/workflow/status/connor-ricks/swift-money/pull_request_checks.yaml?logo=GitHub)
+![Build](https://img.shields.io/github/actions/workflow/status/connor-ricks/swift-money/checks.yaml?logo=GitHub)
 ![Codecov](https://img.shields.io/codecov/c/github/connor-ricks/swift-money?logo=Codecov&label=codecov)
 ![License](https://img.shields.io/github/license/connor-ricks/swift-money?color=blue)
 
