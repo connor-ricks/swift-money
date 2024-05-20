@@ -36,11 +36,11 @@ This strategy works great when you are dealing with one currency throughout your
 
 Take the following example...
 
-Say you are writing an app that keeps track of expenses for employees, and you need to display a list of reciepts, as well as their total value. Your API may return an array of monetary values of various currencies. (Imagine an employee on a business trip abroad)
+Say you are writing an app that keeps track of expenses for employees, and you need to display a list of receipts, as well as their total value. Your API may return an array of monetary values of various currencies. (Imagine an employee on a business trip abroad)
 
 ```json
 {
-  "reciepts": [
+  "receipts": [
     {
       "name": "Airport Dinner",
       "amount": "38.50",
@@ -58,17 +58,17 @@ Say you are writing an app that keeps track of expenses for employees, and you n
 }
 ```
 
-Given that the list of reciepts contains different currencies, decoding the reciepts into a generic typed `Money<USD>` would not be feasible. The app would either have to convert all money to `USD` using a custom decoder, or know exactly what type of money the API will send ahead of time.
+Given that the list of receipts contains different currencies, decoding the receipts into a generic typed `Money<USD>` would not be feasible. The app would either have to convert all money to `USD` using a custom decoder, or know exactly what type of money the API will send ahead of time.
 
-Even if all the reciepts for a given request used the same currency, that would mean that you would have to define your reciept using generics too, as other request could return recipets with different currencies.
+Even if all the receipts for a given request used the same currency, that would mean that you would have to define your receipt using generics too, as other request could return recipets with different currencies.
 
 ```swift
-struct Reciept<C: Currency> {
+struct Receipt<C: Currency> {
     let amount: Money<C>
 }
 ```
 
-Sadly, this doesn't scale well, as anything that interacts with a `Reciept` will also need to be generic over a monetary value, bubbling up entire your entire code base is generic of your currency type.
+Sadly, this doesn't scale well, as anything that interacts with a `Receipt` will also need to be generic over a monetary value, bubbling up entire your entire code base is generic of your currency type.
 
 ## Usage
 
