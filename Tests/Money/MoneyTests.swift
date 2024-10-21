@@ -1,10 +1,10 @@
-import XCTest
 @testable import Money
+import XCTest
 
 final class MoneyTests: XCTestCase {
-    
+
     // MARK: Initialization Tests
-    
+
     func test_money_whenInitializedMatchesParameters() {
         let foo = Money(amount: 2.5, currency: .foo)
         XCTAssertEqual(foo.amount, 2.5)
@@ -28,50 +28,50 @@ final class MoneyTests: XCTestCase {
 
         print(foo)
     }
-    
+
     // MARK: Equatable Tests
-    
+
     func test_money_withMatchingAmountsAndSameCurrency_areEqual() {
         XCTAssertEqual(
             Money(amount: 1, currency: .foo),
             Money(amount: 1, currency: .foo)
         )
     }
-    
+
     func test_money_withMatchingAmountsAndDifferentCurrencies_areNotEqual() {
         XCTAssertNotEqual(
             Money(amount: 1, currency: .foo),
             Money(amount: 1, currency: .bar)
         )
     }
-    
+
     func test_money_withDifferentAmounts_areNotEqual() {
         XCTAssertNotEqual(
             Money(amount: 1, currency: .foo),
             Money(amount: 1.1, currency: .foo)
         )
     }
-    
+
     // MARK: Rounding Tests
-    
+
     func test_money_whenRounded_roundsToCurrencyMinorUnits() {
         let foo = Money(amount: 2.5, currency: .foo)
         XCTAssertEqual(foo.rounded().amount, 2)
-        
+
         var bar = Money(amount: 2.5, currency: .foo)
         bar.round()
         XCTAssertEqual(bar.amount, 2)
-        
+
         let biz = Money(amount: 2.3333333, currency: .baz)
         XCTAssertEqual(biz.rounded().amount, 2.333)
-        
+
         var baz = Money(amount: 2.3333333, currency: .baz)
         baz.round()
         XCTAssertEqual(baz.amount, 2.333)
     }
-    
+
     // MARK: Converting Tests
-    
+
     func test_money_whenConverted_matchesRateAndCurrency() {
         let biz = Money(amount: 10, currency: .foo)
         let convertedBiz = biz.converted(to: .bar, rate: 0.5)
@@ -81,7 +81,7 @@ final class MoneyTests: XCTestCase {
         baz.convert(to: .bar, rate: 0.5)
         XCTAssertEqual(baz, Money(amount: 20, currency: .bar))
     }
-    
+
     // MARK: Arithmetic Tests
 
     func test_money_whenAddedWithDecimal_updatesMonetaryAmount() {
@@ -278,7 +278,7 @@ final class MoneyTests: XCTestCase {
         money = money / Decimal(2)
         XCTAssertEqual(money, Money(amount: 360, currency: .foo))
 
-        money = Decimal(-43200) / money
+        money = Decimal(-43_200) / money
         XCTAssertEqual(money, Money(amount: -120, currency: .foo))
 
         money /= Decimal(-2)

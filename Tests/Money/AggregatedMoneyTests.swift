@@ -1,5 +1,5 @@
-import XCTest
 @testable import Money
+import XCTest
 
 final class AggregatedMoneyTests: XCTestCase {
 
@@ -14,13 +14,13 @@ final class AggregatedMoneyTests: XCTestCase {
             .init(.bar): 1.5
         ]))
 
-        let biz = AggregatedMoney(minorUnits: 1000, currency: .biz)
+        let biz = AggregatedMoney(minorUnits: 1_000, currency: .biz)
         XCTAssertEqual(biz, AggregatedMoney(amounts: [
             .init(.biz): 10
         ]))
 
-        let baz = AggregatedMoney(money:
-            Money(amount: 1.5, currency: .foo),
+        let baz = AggregatedMoney(
+            money: Money(amount: 1.5, currency: .foo),
             Money(amount: 2.0, currency: .foo),
             Money(amount: 1, currency: .bar),
             Money(amount: 1, currency: .bar),
@@ -37,7 +37,7 @@ final class AggregatedMoneyTests: XCTestCase {
             Money(amount: 2.0, currency: .foo),
             Money(amount: 1, currency: .bar),
             Money(amount: 1, currency: .bar),
-            Money(amount: 3, currency: .baz)
+            Money(amount: 3, currency: .baz),
         ])
 
         XCTAssertEqual(bez, AggregatedMoney(amounts: [
@@ -46,13 +46,14 @@ final class AggregatedMoneyTests: XCTestCase {
             .init(.baz): 3,
         ]))
 
-        let waz = AggregatedMoney(aggregatedMoney:
-            AggregatedMoney(amount: 1.5, currency: .foo),
+        let waz = AggregatedMoney(
+            aggregatedMoney: AggregatedMoney(amount: 1.5, currency: .foo),
             AggregatedMoney(amount: 2.0, currency: .foo),
             AggregatedMoney(amount: 1, currency: .bar),
             AggregatedMoney(amount: 1, currency: .bar),
             AggregatedMoney(amount: 3, currency: .baz)
         )
+
         XCTAssertEqual(waz, AggregatedMoney(amounts: [
             .init(.foo): 3.5,
             .init(.bar): 2,
@@ -64,7 +65,7 @@ final class AggregatedMoneyTests: XCTestCase {
             AggregatedMoney(amount: 2.0, currency: .foo),
             AggregatedMoney(amount: 1, currency: .bar),
             AggregatedMoney(amount: 1, currency: .bar),
-            AggregatedMoney(amount: 3, currency: .baz)
+            AggregatedMoney(amount: 3, currency: .baz),
         ])
 
         XCTAssertEqual(wez, AggregatedMoney(amounts: [
@@ -137,7 +138,7 @@ final class AggregatedMoneyTests: XCTestCase {
     // MARK: Conversion Tests
 
     func test_aggregatedMoney_whenConvertedToMoneyUsingExchange_outputMatchesExchangeOutput() throws {
-        let exchange = MockExchange { base, quote in
+        let exchange = MockExchange { _, quote in
             if quote.isEqual(to: .foo) {
                 return 0.5
             } else if quote.isEqual(to: .bar) {
@@ -159,7 +160,7 @@ final class AggregatedMoneyTests: XCTestCase {
     }
 
     func test_aggregatedMoney_whenConvertedToMoneyUsingAsyncExchange_outputMatchesAsyncExchangeOutput() async throws {
-        let exchange = AsyncMockExchange { base, quote in
+        let exchange = AsyncMockExchange { _, quote in
             if quote.isEqual(to: .foo) {
                 return 0.5
             } else if quote.isEqual(to: .bar) {
@@ -239,7 +240,7 @@ final class AggregatedMoneyTests: XCTestCase {
             Money(amount: 4, currency: .foo),
             Money(amount: 4, currency: .bar),
             Money(amount: 2, currency: .baz),
-            Money(amount: 3, currency: .biz)
+            Money(amount: 3, currency: .biz),
         ]))
     }
 
@@ -270,7 +271,7 @@ final class AggregatedMoneyTests: XCTestCase {
             Money(amount: -2, currency: .foo),
             Money(amount: 2, currency: .bar),
             Money(amount: 2, currency: .baz),
-            Money(amount: 3, currency: .biz)
+            Money(amount: 3, currency: .biz),
         ]))
     }
 
@@ -398,14 +399,14 @@ final class AggregatedMoneyTests: XCTestCase {
     func test_aggregatedMoney_whenNegated_doesNegateAmounts() {
         var foo = AggregatedMoney([
             Money(amount: 5, currency: .foo),
-            Money(amount: -10, currency: .bar)
+            Money(amount: -10, currency: .bar),
         ])
 
         foo = -foo
 
         XCTAssertEqual(foo, AggregatedMoney([
             Money(amount: -5, currency: .foo),
-            Money(amount: 10, currency: .bar)
+            Money(amount: 10, currency: .bar),
         ]))
     }
 }

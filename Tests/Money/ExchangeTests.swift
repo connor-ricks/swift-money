@@ -1,12 +1,12 @@
-import XCTest
 @testable import Money
+import XCTest
 
 final class ExchangeTests: XCTestCase {
 
     // MARK: Exchange Tests
 
     func test_exchange_whenTradingInvalidSet_doesThrowError() {
-        let exchange = MockExchange { base, quote in
+        let exchange = MockExchange { _, _ in
             throw MockError()
         }
 
@@ -17,7 +17,7 @@ final class ExchangeTests: XCTestCase {
     }
 
     func test_exchange_whenTradingValidCurrencyPair_doesConvertMoney() throws {
-        let exchange = MockExchange { base, quote in 2 }
+        let exchange = MockExchange { _, _ in 2 }
 
         let money = Money(amount: 10.5, currency: .foo)
         let tradedMoney = try exchange.trade(money, for: .bar)
@@ -26,7 +26,7 @@ final class ExchangeTests: XCTestCase {
     }
 
     func test_exchange_whenTradingValidSet_doesConvertMoney() throws {
-        let exchange = MockExchange { base, quote in
+        let exchange = MockExchange { _, quote in
             if quote.isEqual(to: .foo) {
                 return 2
             } else if quote.isEqual(to: .bar) {
@@ -41,8 +41,8 @@ final class ExchangeTests: XCTestCase {
 
         let aggregatedMoney = AggregatedMoney([
             Money(amount: 10, currency: .foo), // 5
-            Money(amount: 5, currency: .bar), // 4
-            Money(amount: 3, currency: .biz), // 4
+            Money(amount: 5, currency: .bar),  // 4
+            Money(amount: 3, currency: .biz),  // 4
         ])
 
         let tradedMoney = try exchange.trade(aggregatedMoney, for: .baz)
@@ -51,7 +51,7 @@ final class ExchangeTests: XCTestCase {
     }
 
     func test_exchange_whenTradingMoneyWithSameCurrency_doesNotAskForRate() throws {
-        let exchange = MockExchange { base, quote in
+        let exchange = MockExchange { _, _ in
             XCTFail("Conversion between same currencies should not ask for a rate")
             throw MockError()
         }
@@ -62,7 +62,7 @@ final class ExchangeTests: XCTestCase {
     }
 
     func test_exchange_whenTradingAggregatedSameWithCurrency_doesNotAskForRate() throws {
-        let exchange = MockExchange { base, quote in
+        let exchange = MockExchange { _, _ in
             XCTFail("Conversion between same currencies should not ask for a rate")
             throw MockError()
         }
@@ -75,7 +75,7 @@ final class ExchangeTests: XCTestCase {
     // MARK: AsyncExchange Tests
 
     func test_asyncExchange_whenTradingInvalidSet_doesThrowError() async {
-        let exchange = AsyncMockExchange { base, quote in
+        let exchange = AsyncMockExchange { _, _ in
             throw MockError()
         }
 
@@ -89,7 +89,7 @@ final class ExchangeTests: XCTestCase {
     }
 
     func test_asyncExchange_whenTradingValidCurrencyPair_doesConvertMoney() async throws {
-        let exchange = AsyncMockExchange { base, quote in 2 }
+        let exchange = AsyncMockExchange { _, _ in 2 }
 
         let money = Money(amount: 10.5, currency: .foo)
         let tradedMoney = try await exchange.trade(money, for: .bar)
@@ -98,7 +98,7 @@ final class ExchangeTests: XCTestCase {
     }
 
     func test_asyncExchange_whenTradingValidSet_doesConvertMoney() async throws {
-        let exchange = AsyncMockExchange { base, quote in
+        let exchange = AsyncMockExchange { _, quote in
             if quote.isEqual(to: .foo) {
                 return 2
             } else if quote.isEqual(to: .bar) {
@@ -113,8 +113,8 @@ final class ExchangeTests: XCTestCase {
 
         let aggregatedMoney = AggregatedMoney([
             Money(amount: 10, currency: .foo), // 5
-            Money(amount: 5, currency: .bar), // 4
-            Money(amount: 3, currency: .biz), // 4
+            Money(amount: 5, currency: .bar),  // 4
+            Money(amount: 3, currency: .biz),  // 4
         ])
 
         let tradedMoney = try await exchange.trade(aggregatedMoney, for: .baz)
@@ -123,7 +123,7 @@ final class ExchangeTests: XCTestCase {
     }
 
     func test_asyncExchange_whenTradingMoneyWithSameCurrency_doesNotAskForRate() async throws {
-        let exchange = AsyncMockExchange { base, quote in
+        let exchange = AsyncMockExchange { _, _ in
             XCTFail("Conversion between same currencies should not ask for a rate")
             throw MockError()
         }
@@ -134,7 +134,7 @@ final class ExchangeTests: XCTestCase {
     }
 
     func test_asyncExchange_whenTradingAggregatedSameWithCurrency_doesNotAskForRate() async throws {
-        let exchange = AsyncMockExchange { base, quote in
+        let exchange = AsyncMockExchange { _, _ in
             XCTFail("Conversion between same currencies should not ask for a rate")
             throw MockError()
         }

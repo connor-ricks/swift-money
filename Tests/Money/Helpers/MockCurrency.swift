@@ -4,14 +4,14 @@ import Money
 // MARK: - MockCurrency
 
 struct MockCurrency: Currency {
-    
+
     // MARK: Properties
-    
+
     var id: String
     var minorUnits: Int
-    
+
     // MARK: Iniitalizers
-    
+
     init(id: String = "mock", minorUnits: Int = 2) {
         self.id = id
         self.minorUnits = minorUnits

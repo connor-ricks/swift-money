@@ -1,5 +1,5 @@
-import XCTest
 @testable import Money
+import XCTest
 
 final class CurrencyTests: XCTestCase {
     func test_isEqual_betweenTwoCurrenciesOfDifferentTypes_isNotEqual() {

@@ -1,27 +1,18 @@
 {
   "configurations" : [
     {
-      "id" : "98F6D491-806A-4481-80D4-B5DCE4221A79",
-      "name" : "Test Scheme Action",
+      "id" : "6EA73EA7-5457-4DAD-AB33-2C6AA07C2BAC",
+      "name" : "Configuration 1",
       "options" : {
 
       }
     }
   ],
   "defaultOptions" : {
-    "codeCoverage" : {
-      "targets" : [
-        {
-          "containerPath" : "container:",
-          "identifier" : "Money",
-          "name" : "Money"
-        }
-      ]
-    }
+
   },
   "testTargets" : [
     {
-      "parallelizable" : true,
       "target" : {
         "containerPath" : "container:",
         "identifier" : "MoneyTests",
