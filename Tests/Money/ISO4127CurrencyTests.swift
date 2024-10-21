@@ -1,5 +1,5 @@
-import XCTest
 @testable import Money
+import XCTest
 
 final class ISO4217CurrencyTests: XCTestCase {
     func test_alphabeticCodeInitializer_whenInitialized_createsCorrectCurrency() {

@@ -2,8 +2,9 @@ import Foundation
 
 // MARK: - ISO4217Currency
 
-/// An ISO 4217 currency represented by internationally recognized codes for the representation of currencies that enable clarity and reduce errors.
-/// Currencies are represented using three letters. Some of the alphabetic codes for major currencies are familiar, such as “EUR” for Euros.
+/// An ISO 4217 currency represented by internationally recognized codes for the representation
+/// of currencies that enable clarity and reduce errors. Currencies are represented using three letters.
+/// Some of the alphabetic codes for major currencies are familiar, such as “EUR” for Euros.
 public struct ISO4217Currency: Currency {
 
     // MARK: Properties
@@ -18,7 +19,7 @@ public struct ISO4217Currency: Currency {
     public var numericCode: String
 
     /// The name of the currency.
-    public let name: String
+    public var name: String
 
     /// The number of decimal places used to express any minor units for the currency.
     public var minorUnits: Int
@@ -26,7 +27,12 @@ public struct ISO4217Currency: Currency {
     // MARK: Initializers
 
     /// Creates an ISO 4217 Country code from the provided codes, minor units and name.
-    public init(alphabeticCode: String, numericCode: String, minorUnits: Int, name: String) {
+    public init(
+        alphabeticCode: String,
+        numericCode: String,
+        minorUnits: Int,
+        name: String
+    ) {
         precondition(alphabeticCode.count == 3)
         precondition(numericCode.count == 3)
         self.alphabeticCode = alphabeticCode
@@ -35,6 +41,8 @@ public struct ISO4217Currency: Currency {
         self.name = name
     }
 }
+
+// swiftlint:disable line_length function_body_length
 
 // MARK: - Currency + ISO 4217 Currencies
 
@@ -548,9 +556,9 @@ extension ISO4217Currency {
     ///
     /// Currency codes are checked according to a strict, case-sensitive equality comparison.
     ///
-    /// - Important: This initializer only creates ISO 4217 currencies from currencies already defined  in the `Money` module.
-    ///              If you were to define a new ISO 4217 currency code with a new alphabetic code value, this initializer would return `nil`.
-    ///
+    /// - Important: This initializer only creates ISO 4217 currencies from currencies already defined
+    ///              in the `Money` module. If you were to define a new ISO 4217 currency code
+    ///              with a new alphabetic code value, this initializer would return `nil`.
     ///
     /// - Parameter alphabeticCode: The alphabetic ISO 4217 currency code
     @inlinable init?(alphabeticCode: String) {
@@ -728,181 +736,181 @@ extension ISO4217Currency {
 
     /// Initializes an ISO 4217 currency associated with a given numeric code.
     ///
-    /// - Important: This initializer only creates ISO 4217 currencies from currencies already defined  in the `Money` module.
-    ///              If you were to define a new ISO 4217 currency code with a new numeric code value, this initializer would return `nil`.
-    ///
+    /// - Important: This initializer only creates ISO 4217 currencies from currencies already defined
+    ///              in the `Money` module. If you were to define a new ISO 4217 currency code with
+    ///              a new numeric code value, this initializer would return `nil`.
     ///
     /// - Parameter numericCode: The numeric ISO 4217 currency code
     @inlinable init?(numericCode: String) {
         switch numericCode {
-            case "784": self = .AED
-            case "971": self = .AFN
-            case "008": self = .ALL
-            case "051": self = .AMD
-            case "532": self = .ANG
-            case "973": self = .AOA
-            case "032": self = .ARS
-            case "036": self = .AUD
-            case "533": self = .AWG
-            case "944": self = .AZN
-            case "977": self = .BAM
-            case "052": self = .BBD
-            case "050": self = .BDT
-            case "975": self = .BGN
-            case "048": self = .BHD
-            case "108": self = .BIF
-            case "060": self = .BMD
-            case "096": self = .BND
-            case "068": self = .BOB
-            case "984": self = .BOV
-            case "986": self = .BRL
-            case "044": self = .BSD
-            case "064": self = .BTN
-            case "072": self = .BWP
-            case "933": self = .BYN
-            case "084": self = .BZD
-            case "124": self = .CAD
-            case "976": self = .CDF
-            case "947": self = .CHE
-            case "756": self = .CHF
-            case "948": self = .CHW
-            case "990": self = .CLF
-            case "152": self = .CLP
-            case "156": self = .CNY
-            case "170": self = .COP
-            case "970": self = .COU
-            case "188": self = .CRC
-            case "931": self = .CUC
-            case "192": self = .CUP
-            case "132": self = .CVE
-            case "203": self = .CZK
-            case "262": self = .DJF
-            case "208": self = .DKK
-            case "214": self = .DOP
-            case "012": self = .DZD
-            case "818": self = .EGP
-            case "232": self = .ERN
-            case "230": self = .ETB
-            case "978": self = .EUR
-            case "242": self = .FJD
-            case "238": self = .FKP
-            case "826": self = .GBP
-            case "981": self = .GEL
-            case "936": self = .GHS
-            case "292": self = .GIP
-            case "270": self = .GMD
-            case "324": self = .GNF
-            case "320": self = .GTQ
-            case "328": self = .GYD
-            case "344": self = .HKD
-            case "340": self = .HNL
-            case "191": self = .HRK
-            case "332": self = .HTG
-            case "348": self = .HUF
-            case "360": self = .IDR
-            case "376": self = .ILS
-            case "356": self = .INR
-            case "368": self = .IQD
-            case "364": self = .IRR
-            case "352": self = .ISK
-            case "388": self = .JMD
-            case "400": self = .JOD
-            case "392": self = .JPY
-            case "404": self = .KES
-            case "417": self = .KGS
-            case "116": self = .KHR
-            case "174": self = .KMF
-            case "408": self = .KPW
-            case "410": self = .KRW
-            case "414": self = .KWD
-            case "136": self = .KYD
-            case "398": self = .KZT
-            case "418": self = .LAK
-            case "422": self = .LBP
-            case "144": self = .LKR
-            case "430": self = .LRD
-            case "426": self = .LSL
-            case "434": self = .LYD
-            case "504": self = .MAD
-            case "498": self = .MDL
-            case "969": self = .MGA
-            case "807": self = .MKD
-            case "104": self = .MMK
-            case "496": self = .MNT
-            case "446": self = .MOP
-            case "929": self = .MRU
-            case "480": self = .MUR
-            case "462": self = .MVR
-            case "454": self = .MWK
-            case "484": self = .MXN
-            case "458": self = .MYR
-            case "943": self = .MZN
-            case "516": self = .NAD
-            case "566": self = .NGN
-            case "558": self = .NIO
-            case "578": self = .NOK
-            case "524": self = .NPR
-            case "554": self = .NZD
-            case "512": self = .OMR
-            case "590": self = .PAB
-            case "604": self = .PEN
-            case "598": self = .PGK
-            case "608": self = .PHP
-            case "586": self = .PKR
-            case "985": self = .PLN
-            case "600": self = .PYG
-            case "634": self = .QAR
-            case "946": self = .RON
-            case "941": self = .RSD
-            case "643": self = .RUB
-            case "646": self = .RWF
-            case "682": self = .SAR
-            case "090": self = .SBD
-            case "690": self = .SCR
-            case "938": self = .SDG
-            case "752": self = .SEK
-            case "702": self = .SGD
-            case "654": self = .SHP
-            case "694": self = .SLL
-            case "706": self = .SOS
-            case "968": self = .SRD
-            case "728": self = .SSP
-            case "930": self = .STN
-            case "222": self = .SVC
-            case "760": self = .SYP
-            case "748": self = .SZL
-            case "764": self = .THB
-            case "972": self = .TJS
-            case "934": self = .TMT
-            case "788": self = .TND
-            case "776": self = .TOP
-            case "949": self = .TRY
-            case "780": self = .TTD
-            case "901": self = .TWD
-            case "834": self = .TZS
-            case "980": self = .UAH
-            case "800": self = .UGX
-            case "840": self = .USD
-            case "858": self = .UYU
-            case "860": self = .UZS
-            case "937": self = .VEF
-            case "704": self = .VND
-            case "548": self = .VUV
-            case "882": self = .WST
-            case "950": self = .XAF
-            case "961": self = .XAG
-            case "959": self = .XAU
-            case "951": self = .XCD
-            case "952": self = .XOF
-            case "964": self = .XPD
-            case "953": self = .XPF
-            case "962": self = .XPT
-            case "994": self = .XSU
-            case "886": self = .YER
-            case "710": self = .ZAR
-            case "967": self = .ZMW
-            case "932": self = .ZWL
-            default: return nil
+        case "784": self = .AED
+        case "971": self = .AFN
+        case "008": self = .ALL
+        case "051": self = .AMD
+        case "532": self = .ANG
+        case "973": self = .AOA
+        case "032": self = .ARS
+        case "036": self = .AUD
+        case "533": self = .AWG
+        case "944": self = .AZN
+        case "977": self = .BAM
+        case "052": self = .BBD
+        case "050": self = .BDT
+        case "975": self = .BGN
+        case "048": self = .BHD
+        case "108": self = .BIF
+        case "060": self = .BMD
+        case "096": self = .BND
+        case "068": self = .BOB
+        case "984": self = .BOV
+        case "986": self = .BRL
+        case "044": self = .BSD
+        case "064": self = .BTN
+        case "072": self = .BWP
+        case "933": self = .BYN
+        case "084": self = .BZD
+        case "124": self = .CAD
+        case "976": self = .CDF
+        case "947": self = .CHE
+        case "756": self = .CHF
+        case "948": self = .CHW
+        case "990": self = .CLF
+        case "152": self = .CLP
+        case "156": self = .CNY
+        case "170": self = .COP
+        case "970": self = .COU
+        case "188": self = .CRC
+        case "931": self = .CUC
+        case "192": self = .CUP
+        case "132": self = .CVE
+        case "203": self = .CZK
+        case "262": self = .DJF
+        case "208": self = .DKK
+        case "214": self = .DOP
+        case "012": self = .DZD
+        case "818": self = .EGP
+        case "232": self = .ERN
+        case "230": self = .ETB
+        case "978": self = .EUR
+        case "242": self = .FJD
+        case "238": self = .FKP
+        case "826": self = .GBP
+        case "981": self = .GEL
+        case "936": self = .GHS
+        case "292": self = .GIP
+        case "270": self = .GMD
+        case "324": self = .GNF
+        case "320": self = .GTQ
+        case "328": self = .GYD
+        case "344": self = .HKD
+        case "340": self = .HNL
+        case "191": self = .HRK
+        case "332": self = .HTG
+        case "348": self = .HUF
+        case "360": self = .IDR
+        case "376": self = .ILS
+        case "356": self = .INR
+        case "368": self = .IQD
+        case "364": self = .IRR
+        case "352": self = .ISK
+        case "388": self = .JMD
+        case "400": self = .JOD
+        case "392": self = .JPY
+        case "404": self = .KES
+        case "417": self = .KGS
+        case "116": self = .KHR
+        case "174": self = .KMF
+        case "408": self = .KPW
+        case "410": self = .KRW
+        case "414": self = .KWD
+        case "136": self = .KYD
+        case "398": self = .KZT
+        case "418": self = .LAK
+        case "422": self = .LBP
+        case "144": self = .LKR
+        case "430": self = .LRD
+        case "426": self = .LSL
+        case "434": self = .LYD
+        case "504": self = .MAD
+        case "498": self = .MDL
+        case "969": self = .MGA
+        case "807": self = .MKD
+        case "104": self = .MMK
+        case "496": self = .MNT
+        case "446": self = .MOP
+        case "929": self = .MRU
+        case "480": self = .MUR
+        case "462": self = .MVR
+        case "454": self = .MWK
+        case "484": self = .MXN
+        case "458": self = .MYR
+        case "943": self = .MZN
+        case "516": self = .NAD
+        case "566": self = .NGN
+        case "558": self = .NIO
+        case "578": self = .NOK
+        case "524": self = .NPR
+        case "554": self = .NZD
+        case "512": self = .OMR
+        case "590": self = .PAB
+        case "604": self = .PEN
+        case "598": self = .PGK
+        case "608": self = .PHP
+        case "586": self = .PKR
+        case "985": self = .PLN
+        case "600": self = .PYG
+        case "634": self = .QAR
+        case "946": self = .RON
+        case "941": self = .RSD
+        case "643": self = .RUB
+        case "646": self = .RWF
+        case "682": self = .SAR
+        case "090": self = .SBD
+        case "690": self = .SCR
+        case "938": self = .SDG
+        case "752": self = .SEK
+        case "702": self = .SGD
+        case "654": self = .SHP
+        case "694": self = .SLL
+        case "706": self = .SOS
+        case "968": self = .SRD
+        case "728": self = .SSP
+        case "930": self = .STN
+        case "222": self = .SVC
+        case "760": self = .SYP
+        case "748": self = .SZL
+        case "764": self = .THB
+        case "972": self = .TJS
+        case "934": self = .TMT
+        case "788": self = .TND
+        case "776": self = .TOP
+        case "949": self = .TRY
+        case "780": self = .TTD
+        case "901": self = .TWD
+        case "834": self = .TZS
+        case "980": self = .UAH
+        case "800": self = .UGX
+        case "840": self = .USD
+        case "858": self = .UYU
+        case "860": self = .UZS
+        case "937": self = .VEF
+        case "704": self = .VND
+        case "548": self = .VUV
+        case "882": self = .WST
+        case "950": self = .XAF
+        case "961": self = .XAG
+        case "959": self = .XAU
+        case "951": self = .XCD
+        case "952": self = .XOF
+        case "964": self = .XPD
+        case "953": self = .XPF
+        case "962": self = .XPT
+        case "994": self = .XSU
+        case "886": self = .YER
+        case "710": self = .ZAR
+        case "967": self = .ZMW
+        case "932": self = .ZWL
+        default: return nil
         }
     }
 }
@@ -1082,3 +1090,5 @@ extension ISO4217Currency: CaseIterable {
         ]
     }
 }
+
+// swiftlint:enable line_length function_body_length
