@@ -41,10 +41,10 @@ development:
 	brew install swiftlint
 
 lint:
-	swiftlint lint --config .swiftlint.yaml
+	swiftlint lint
 
 lint-fix:
-	swiftlint lint --config ./.swiftlint.yaml --fix
+	swiftlint lint --fix
 
 define udid_for
 $(shell xcrun simctl list devices available '$(1)' | grep '$(2)' | sort -r | head -1 | awk -F '[()]' '{ print $$(NF-3) }')
