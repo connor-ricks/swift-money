@@ -5,10 +5,6 @@
 
 A precise, flexible representation of monetary values in any given currency.
 
-## Additional Resources
-
-- [GitHub Repo](https://github.com/connorricks/swift-money)
-
 ## Overview
 
 Rather than using a concrete generic type to enforce type safety and help 
