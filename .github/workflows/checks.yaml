@@ -11,7 +11,7 @@ on:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
-  
+
 jobs:
   lint:
     name: 📝 Lint
@@ -25,26 +25,22 @@ jobs:
           args: --strict
   test:
     name: 🧪 Test
-    runs-on: macos-latest
+    runs-on: macos-15
     strategy:
       matrix:
-        platform: [IOS, MACOS, MAC_CATALYST, TVOS, WATCHOS, VISIONOS]
+        command: [test]
+        platform: [IOS, MACOS, MAC_CATALYST, TVOS, VISIONOS, WATCHOS]
+      fail-fast: false
     steps:
-      - name: 👀 Install visionOS runtime
-        if: matrix.platform == 'visionOS'
-        run: |
-          sudo xcodebuild -runFirstLaunch
-          sudo xcrun simctl list
-          sudo xcodebuild -downloadPlatform visionOS
-          sudo xcodebuild -runFirstLaunch
-      - name: 🗄️ Checkout Code
-        uses: actions/checkout@v4
       - name: 🧰 Select Xcode Version
         run: xcodes select 16
-      - name: 🧪 Run tests
-        run: make XCODEBUILD_ARGUMENT=test CONFIG=Debug PLATFORM='${{ matrix.platform }}'
+      - name: 🖥️ List Available Devices
+        run: xcrun simctl list devices available
+      - name: 🗄️ Checkout Code
+        uses: actions/checkout@v4
+      - name: 🧪 Run Tests
+        run: make XCODEBUILD_ARGUMENT='${{ matrix.command }}' CONFIG=Debug PLATFORM='${{ matrix.platform }}' xcodebuild
       - name: 📊 Upload Coverage
         uses: codecov/codecov-action@v4
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          swift: true
