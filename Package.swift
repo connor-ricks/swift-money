@@ -21,5 +21,5 @@ let package = Package(
     targets: [
         .target(name: "Money"),
         .testTarget(name: "MoneyTests", dependencies: ["Money"]),
-    ],
+    ]
 )

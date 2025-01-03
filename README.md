@@ -226,31 +226,31 @@ aggregatedMoney[.USD] = 15 // AggregatedMoney(money: Money(amount: 15, currency:
 
 ### Supported Currencies
 
-Out of the box, this framework has predefined currencies for most ISO 4126 currencies. You can reference them using their alphabetic code as static properties on `Currency`
+Out of the box, this framework has predefined currencies for most ISO 4217 currencies. You can reference them using their alphabetic code as static properties on `Currency`
 
 ```swift
 let dollars = Money(amount: 10, currency: .USD)
 let sterling = Money(amount: 10, currency: .GBP)
 ```
 
-In addition, you can attempt to initialize an `ISO4127Currency` using either an alphabetic code or numeric code.
+In addition, you can attempt to initialize an `ISO4217Currency` using either an alphabetic code or numeric code.
 
 ```swift
-let dollar = ISO4127Currency(alphabeticCode: "USD") // Optional<ISO4127Currency>(.GBP)
-let sterling = ISO4127Currency(numericCode: "826")  // Optional<ISO4127Currency>(.GBP)
+let dollar = ISO4217Currency(alphabeticCode: "USD") // Optional<ISO4217Currency>(.GBP)
+let sterling = ISO4217Currency(numericCode: "826")  // Optional<ISO4217Currency>(.GBP)
 ```
 
-These initializers will only work for currencies defined within the framework. If you extend `ISO4127Currency` beyond the predefined currencies, they will not successfully be decoded by the initializers.
+These initializers will only work for currencies defined within the framework. If you extend `ISO4217Currency` beyond the predefined currencies, they will not successfully be decoded by the initializers.
 
 #### Custom Currencies
 
-While this framework comes prepopulated with a fair number of currencies, there are times in which you many need to add your own, either new ISO 4127 currencies or perhaps even your own custom currencies.
+While this framework comes prepopulated with a fair number of currencies, there are times in which you many need to add your own, either new ISO 4217 currencies or perhaps even your own custom currencies.
 
-Creating a new `ISO4127Currency` is as easy as extending the static properties that already exist on `Currency`.
+Creating a new `ISO4217Currency` is as easy as extending the static properties that already exist on `Currency`.
 
 ```swift
-extension Currency where Self == ISO4127Currency {
-    static var XXX: ISO4127Currency { .init(alphabeticCode: "XXX", numericCode: "000", minorUnits: 2, name: "Some Currency") }
+extension Currency where Self == ISO4217Currency {
+    static var XXX: ISO4217Currency { .init(alphabeticCode: "XXX", numericCode: "000", minorUnits: 2, name: "Some Currency") }
 }
 
 let money = Money(amount: 10, currency: .XXX)
