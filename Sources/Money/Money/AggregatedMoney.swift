@@ -1,11 +1,11 @@
-import Foundation
+public import Foundation
 
 // MARK: - AggregatedMoney
 
 /// A representation of aggregated monetary values across various currencies.
 ///
 /// Performing arithmetic operations across monetary value is not as easy as adding
-/// up their ``Money/Money/amount`` values. This is because ``Money/Money``
+/// up their ``Money`` values. This is because ``Money``
 /// is also represented by a ``Currency``. Monetary amounts with mismatched currencies
 /// cannot simply be added together, as that would not take into account exchange rate
 /// between the two values.
@@ -295,24 +295,24 @@ extension AggregatedMoney {
 
     // MARK: Division
 
-    /// The quotient of an aggregated monetary value and a scalar value..
+    /// The quotient of an aggregated monetary value and a scalar value.
     public static func / (lhs: Self, rhs: Decimal) -> Self {
         var copy = lhs
         copy.amounts = copy.amounts.mapValues { $0 / rhs }
         return copy
     }
 
-    /// The quotient of an aggregated monetary value and a scalar value..
+    /// The quotient of an aggregated monetary value and a scalar value.
     @inlinable public static func / (lhs: Self, rhs: Int) -> Self {
         lhs / Decimal(rhs)
     }
 
-    /// Divides an aggregated monetary value by a scalar value..
+    /// Divides an aggregated monetary value by a scalar value.
     @inlinable public static func /= (lhs: inout Self, rhs: Decimal) {
         lhs = lhs / rhs
     }
 
-    /// Divides an aggregated monetary value by a scalar value..
+    /// Divides an aggregated monetary value by a scalar value.
     @inlinable public static func /= (lhs: inout Self, rhs: Int) {
         lhs = lhs / rhs
     }
