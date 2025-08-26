@@ -42,8 +42,6 @@ public struct ISO4217Currency: Currency {
     }
 }
 
-// swiftlint:disable line_length function_body_length
-
 // MARK: - Currency + ISO 4217 Currencies
 
 extension Currency where Self == ISO4217Currency {
@@ -58,9 +56,6 @@ extension Currency where Self == ISO4217Currency {
 
     /// Armenian Dram (AMD) or (051)
     @inlinable public static var AMD: ISO4217Currency { .init(alphabeticCode: "AMD", numericCode: "051", minorUnits: 2, name: "Armenian Dram") }
-
-    /// Netherlands Antillean Guilder (ANG) or (532)
-    @inlinable public static var ANG: ISO4217Currency { .init(alphabeticCode: "ANG", numericCode: "532", minorUnits: 2, name: "Netherlands Antillean Guilder") }
 
     /// Kwanza (AOA) or (973)
     @inlinable public static var AOA: ISO4217Currency { .init(alphabeticCode: "AOA", numericCode: "973", minorUnits: 2, name: "Kwanza") }
@@ -104,9 +99,6 @@ extension Currency where Self == ISO4217Currency {
     /// Boliviano (BOB) or (068)
     @inlinable public static var BOB: ISO4217Currency { .init(alphabeticCode: "BOB", numericCode: "068", minorUnits: 2, name: "Boliviano") }
 
-    /// Bolivian Mvdol (BOV) or (984)
-    @inlinable public static var BOV: ISO4217Currency { .init(alphabeticCode: "BOV", numericCode: "984", minorUnits: 2, name: "Bolivian Mvdol") }
-
     /// Brazilian Real (BRL) or (986)
     @inlinable public static var BRL: ISO4217Currency { .init(alphabeticCode: "BRL", numericCode: "986", minorUnits: 2, name: "Brazilian Real") }
 
@@ -131,17 +123,8 @@ extension Currency where Self == ISO4217Currency {
     /// Congolese Franc (CDF) or (976)
     @inlinable public static var CDF: ISO4217Currency { .init(alphabeticCode: "CDF", numericCode: "976", minorUnits: 2, name: "Congolese Franc") }
 
-    /// WIR Euro (CHE) or (947)
-    @inlinable public static var CHE: ISO4217Currency { .init(alphabeticCode: "CHE", numericCode: "947", minorUnits: 2, name: "WIR Euro") }
-
     /// Swiss Franc (CHF) or (756)
     @inlinable public static var CHF: ISO4217Currency { .init(alphabeticCode: "CHF", numericCode: "756", minorUnits: 2, name: "Swiss Franc") }
-
-    /// WIR Franc (CHW) or (948)
-    @inlinable public static var CHW: ISO4217Currency { .init(alphabeticCode: "CHW", numericCode: "948", minorUnits: 2, name: "WIR Franc") }
-
-    /// Unidad de Fomento (CLF) or (990)
-    @inlinable public static var CLF: ISO4217Currency { .init(alphabeticCode: "CLF", numericCode: "990", minorUnits: 0, name: "Unidad de Fomento") }
 
     /// Chilean Peso (CLP) or (152)
     @inlinable public static var CLP: ISO4217Currency { .init(alphabeticCode: "CLP", numericCode: "152", minorUnits: 0, name: "Chilean Peso") }
@@ -152,14 +135,8 @@ extension Currency where Self == ISO4217Currency {
     /// Colombian Peso (COP) or (170)
     @inlinable public static var COP: ISO4217Currency { .init(alphabeticCode: "COP", numericCode: "170", minorUnits: 2, name: "Colombian Peso") }
 
-    /// Unidad de Valor Real (COU) or (970)
-    @inlinable public static var COU: ISO4217Currency { .init(alphabeticCode: "COU", numericCode: "970", minorUnits: 2, name: "Unidad de Valor Real") }
-
     /// Costa Rican Colon (CRC) or (188)
     @inlinable public static var CRC: ISO4217Currency { .init(alphabeticCode: "CRC", numericCode: "188", minorUnits: 2, name: "Costa Rican Colon") }
-
-    /// Peso Convertible (CUC) or (931)
-    @inlinable public static var CUC: ISO4217Currency { .init(alphabeticCode: "CUC", numericCode: "931", minorUnits: 2, name: "Peso Convertible") }
 
     /// Cuban Peso (CUP) or (192)
     @inlinable public static var CUP: ISO4217Currency { .init(alphabeticCode: "CUP", numericCode: "192", minorUnits: 2, name: "Cuban Peso") }
@@ -229,9 +206,6 @@ extension Currency where Self == ISO4217Currency {
 
     /// Lempira (HNL) or (340)
     @inlinable public static var HNL: ISO4217Currency { .init(alphabeticCode: "HNL", numericCode: "340", minorUnits: 2, name: "Lempira") }
-
-    /// Kuna (HRK) or (191)
-    @inlinable public static var HRK: ISO4217Currency { .init(alphabeticCode: "HRK", numericCode: "191", minorUnits: 2, name: "Kuna") }
 
     /// Gourde (HTG) or (332)
     @inlinable public static var HTG: ISO4217Currency { .init(alphabeticCode: "HTG", numericCode: "332", minorUnits: 2, name: "Gourde") }
@@ -377,8 +351,8 @@ extension Currency where Self == ISO4217Currency {
     /// Balboa (PAB) or (590)
     @inlinable public static var PAB: ISO4217Currency { .init(alphabeticCode: "PAB", numericCode: "590", minorUnits: 2, name: "Balboa") }
 
-    /// Nuevo Sol (PEN) or (604)
-    @inlinable public static var PEN: ISO4217Currency { .init(alphabeticCode: "PEN", numericCode: "604", minorUnits: 2, name: "Nuevo Sol") }
+    /// Sol (PEN) or (604)
+    @inlinable public static var PEN: ISO4217Currency { .init(alphabeticCode: "PEN", numericCode: "604", minorUnits: 2, name: "Sol") }
 
     /// Kina (PGK) or (598)
     @inlinable public static var PGK: ISO4217Currency { .init(alphabeticCode: "PGK", numericCode: "598", minorUnits: 2, name: "Kina") }
@@ -431,8 +405,8 @@ extension Currency where Self == ISO4217Currency {
     /// Saint Helena Pound (SHP) or (654)
     @inlinable public static var SHP: ISO4217Currency { .init(alphabeticCode: "SHP", numericCode: "654", minorUnits: 2, name: "Saint Helena Pound") }
 
-    /// Leone (SLL) or (694)
-    @inlinable public static var SLL: ISO4217Currency { .init(alphabeticCode: "SLL", numericCode: "694", minorUnits: 2, name: "Leone") }
+    /// Leone (SLE) or (925)
+    @inlinable public static var SLE: ISO4217Currency { .init(alphabeticCode: "SLE", numericCode: "925", minorUnits: 2, name: "Leone") }
 
     /// Somali Shilling (SOS) or (706)
     @inlinable public static var SOS: ISO4217Currency { .init(alphabeticCode: "SOS", numericCode: "706", minorUnits: 2, name: "Somali Shilling") }
@@ -497,8 +471,11 @@ extension Currency where Self == ISO4217Currency {
     /// Uzbekistan Sum (UZS) or (860)
     @inlinable public static var UZS: ISO4217Currency { .init(alphabeticCode: "UZS", numericCode: "860", minorUnits: 2, name: "Uzbekistan Sum") }
 
-    /// Bolívar (VEF) or (937)
-    @inlinable public static var VEF: ISO4217Currency { .init(alphabeticCode: "VEF", numericCode: "937", minorUnits: 2, name: "Bolívar") }
+    /// Bolívar Soberano (VED) or (926)
+    @inlinable public static var VED: ISO4217Currency { .init(alphabeticCode: "VED", numericCode: "926", minorUnits: 2, name: "Bolívar Soberano") }
+
+    /// Bolívar Soberano (VES) or (928)
+    @inlinable public static var VES: ISO4217Currency { .init(alphabeticCode: "VES", numericCode: "928", minorUnits: 2, name: "Bolívar Soberano") }
 
     /// Dong (VND) or (704)
     @inlinable public static var VND: ISO4217Currency { .init(alphabeticCode: "VND", numericCode: "704", minorUnits: 0, name: "Dong") }
@@ -512,29 +489,17 @@ extension Currency where Self == ISO4217Currency {
     /// CFA Franc BEAC (XAF) or (950)
     @inlinable public static var XAF: ISO4217Currency { .init(alphabeticCode: "XAF", numericCode: "950", minorUnits: 0, name: "CFA Franc BEAC") }
 
-    /// Silver (ounce) (XAG) or (961)
-    @inlinable public static var XAG: ISO4217Currency { .init(alphabeticCode: "XAG", numericCode: "961", minorUnits: 4, name: "Silver (ounce)") }
-
-    /// Gold (ounce) (XAU) or (959)
-    @inlinable public static var XAU: ISO4217Currency { .init(alphabeticCode: "XAU", numericCode: "959", minorUnits: 4, name: "Gold (ounce)") }
-
     /// East Caribbean Dollar (XCD) or (951)
     @inlinable public static var XCD: ISO4217Currency { .init(alphabeticCode: "XCD", numericCode: "951", minorUnits: 2, name: "East Caribbean Dollar") }
+
+    /// Caribbean Guilder (XCG) or (532)
+    @inlinable public static var XCG: ISO4217Currency { .init(alphabeticCode: "XCG", numericCode: "532", minorUnits: 2, name: "Caribbean Guilder") }
 
     /// CFA Franc BCEAO (XOF) or (952)
     @inlinable public static var XOF: ISO4217Currency { .init(alphabeticCode: "XOF", numericCode: "952", minorUnits: 0, name: "CFA Franc BCEAO") }
 
-    /// Palladium (ounce) (XPD) or (964)
-    @inlinable public static var XPD: ISO4217Currency { .init(alphabeticCode: "XPD", numericCode: "964", minorUnits: 4, name: "Palladium (ounce)") }
-
     /// CFP Franc (XPF) or (953)
     @inlinable public static var XPF: ISO4217Currency { .init(alphabeticCode: "XPF", numericCode: "953", minorUnits: 0, name: "CFP Franc") }
-
-    /// Platinum (ounce) (XPT) or (962)
-    @inlinable public static var XPT: ISO4217Currency { .init(alphabeticCode: "XPT", numericCode: "962", minorUnits: 4, name: "Platinum (ounce)") }
-
-    /// Sucre (XSU) or (994)
-    @inlinable public static var XSU: ISO4217Currency { .init(alphabeticCode: "XSU", numericCode: "994", minorUnits: 0, name: "Sucre") }
 
     /// Yemeni Rial (YER) or (886)
     @inlinable public static var YER: ISO4217Currency { .init(alphabeticCode: "YER", numericCode: "886", minorUnits: 2, name: "Yemeni Rial") }
@@ -545,386 +510,17 @@ extension Currency where Self == ISO4217Currency {
     /// Zambian Kwacha (ZMW) or (967)
     @inlinable public static var ZMW: ISO4217Currency { .init(alphabeticCode: "ZMW", numericCode: "967", minorUnits: 2, name: "Zambian Kwacha") }
 
-    /// Zimbabwe Dollar (ZWL) or (932)
-    @inlinable public static var ZWL: ISO4217Currency { .init(alphabeticCode: "ZWL", numericCode: "932", minorUnits: 2, name: "Zimbabwe Dollar") }
-}
+    /// Zimbabwe Gold (ZWG) or (924)
+    @inlinable public static var ZWG: ISO4217Currency { .init(alphabeticCode: "ZWG", numericCode: "924", minorUnits: 2, name: "Zimbabwe Gold") }
 
-// MARK: ISO4217Currency + Code Initializer
-
-extension ISO4217Currency {
-    /// Initializes an ISO 4217 currency associated with a given alphabetic code.
-    ///
-    /// Currency codes are checked according to a strict, case-sensitive equality comparison.
-    ///
-    /// - Important: This initializer only creates ISO 4217 currencies from currencies already defined
-    ///              in the `Money` module. If you were to define a new ISO 4217 currency code
-    ///              with a new alphabetic code value, this initializer would return `nil`.
-    ///
-    /// - Parameter alphabeticCode: The alphabetic ISO 4217 currency code
-    @inlinable init?(alphabeticCode: String) {
-        switch alphabeticCode {
-        case "AED": self = .AED
-        case "AFN": self = .AFN
-        case "ALL": self = .ALL
-        case "AMD": self = .AMD
-        case "ANG": self = .ANG
-        case "AOA": self = .AOA
-        case "ARS": self = .ARS
-        case "AUD": self = .AUD
-        case "AWG": self = .AWG
-        case "AZN": self = .AZN
-        case "BAM": self = .BAM
-        case "BBD": self = .BBD
-        case "BDT": self = .BDT
-        case "BGN": self = .BGN
-        case "BHD": self = .BHD
-        case "BIF": self = .BIF
-        case "BMD": self = .BMD
-        case "BND": self = .BND
-        case "BOB": self = .BOB
-        case "BOV": self = .BOV
-        case "BRL": self = .BRL
-        case "BSD": self = .BSD
-        case "BTN": self = .BTN
-        case "BWP": self = .BWP
-        case "BYN": self = .BYN
-        case "BZD": self = .BZD
-        case "CAD": self = .CAD
-        case "CDF": self = .CDF
-        case "CHE": self = .CHE
-        case "CHF": self = .CHF
-        case "CHW": self = .CHW
-        case "CLF": self = .CLF
-        case "CLP": self = .CLP
-        case "CNY": self = .CNY
-        case "COP": self = .COP
-        case "COU": self = .COU
-        case "CRC": self = .CRC
-        case "CUC": self = .CUC
-        case "CUP": self = .CUP
-        case "CVE": self = .CVE
-        case "CZK": self = .CZK
-        case "DJF": self = .DJF
-        case "DKK": self = .DKK
-        case "DOP": self = .DOP
-        case "DZD": self = .DZD
-        case "EGP": self = .EGP
-        case "ERN": self = .ERN
-        case "ETB": self = .ETB
-        case "EUR": self = .EUR
-        case "FJD": self = .FJD
-        case "FKP": self = .FKP
-        case "GBP": self = .GBP
-        case "GEL": self = .GEL
-        case "GHS": self = .GHS
-        case "GIP": self = .GIP
-        case "GMD": self = .GMD
-        case "GNF": self = .GNF
-        case "GTQ": self = .GTQ
-        case "GYD": self = .GYD
-        case "HKD": self = .HKD
-        case "HNL": self = .HNL
-        case "HRK": self = .HRK
-        case "HTG": self = .HTG
-        case "HUF": self = .HUF
-        case "IDR": self = .IDR
-        case "ILS": self = .ILS
-        case "INR": self = .INR
-        case "IQD": self = .IQD
-        case "IRR": self = .IRR
-        case "ISK": self = .ISK
-        case "JMD": self = .JMD
-        case "JOD": self = .JOD
-        case "JPY": self = .JPY
-        case "KES": self = .KES
-        case "KGS": self = .KGS
-        case "KHR": self = .KHR
-        case "KMF": self = .KMF
-        case "KPW": self = .KPW
-        case "KRW": self = .KRW
-        case "KWD": self = .KWD
-        case "KYD": self = .KYD
-        case "KZT": self = .KZT
-        case "LAK": self = .LAK
-        case "LBP": self = .LBP
-        case "LKR": self = .LKR
-        case "LRD": self = .LRD
-        case "LSL": self = .LSL
-        case "LYD": self = .LYD
-        case "MAD": self = .MAD
-        case "MDL": self = .MDL
-        case "MGA": self = .MGA
-        case "MKD": self = .MKD
-        case "MMK": self = .MMK
-        case "MNT": self = .MNT
-        case "MOP": self = .MOP
-        case "MRU": self = .MRU
-        case "MUR": self = .MUR
-        case "MVR": self = .MVR
-        case "MWK": self = .MWK
-        case "MXN": self = .MXN
-        case "MYR": self = .MYR
-        case "MZN": self = .MZN
-        case "NAD": self = .NAD
-        case "NGN": self = .NGN
-        case "NIO": self = .NIO
-        case "NOK": self = .NOK
-        case "NPR": self = .NPR
-        case "NZD": self = .NZD
-        case "OMR": self = .OMR
-        case "PAB": self = .PAB
-        case "PEN": self = .PEN
-        case "PGK": self = .PGK
-        case "PHP": self = .PHP
-        case "PKR": self = .PKR
-        case "PLN": self = .PLN
-        case "PYG": self = .PYG
-        case "QAR": self = .QAR
-        case "RON": self = .RON
-        case "RSD": self = .RSD
-        case "RUB": self = .RUB
-        case "RWF": self = .RWF
-        case "SAR": self = .SAR
-        case "SBD": self = .SBD
-        case "SCR": self = .SCR
-        case "SDG": self = .SDG
-        case "SEK": self = .SEK
-        case "SGD": self = .SGD
-        case "SHP": self = .SHP
-        case "SLL": self = .SLL
-        case "SOS": self = .SOS
-        case "SRD": self = .SRD
-        case "SSP": self = .SSP
-        case "STN": self = .STN
-        case "SVC": self = .SVC
-        case "SYP": self = .SYP
-        case "SZL": self = .SZL
-        case "THB": self = .THB
-        case "TJS": self = .TJS
-        case "TMT": self = .TMT
-        case "TND": self = .TND
-        case "TOP": self = .TOP
-        case "TRY": self = .TRY
-        case "TTD": self = .TTD
-        case "TWD": self = .TWD
-        case "TZS": self = .TZS
-        case "UAH": self = .UAH
-        case "UGX": self = .UGX
-        case "USD": self = .USD
-        case "UYU": self = .UYU
-        case "UZS": self = .UZS
-        case "VEF": self = .VEF
-        case "VND": self = .VND
-        case "VUV": self = .VUV
-        case "WST": self = .WST
-        case "XAF": self = .XAF
-        case "XAG": self = .XAG
-        case "XAU": self = .XAU
-        case "XCD": self = .XCD
-        case "XOF": self = .XOF
-        case "XPD": self = .XPD
-        case "XPF": self = .XPF
-        case "XPT": self = .XPT
-        case "XSU": self = .XSU
-        case "YER": self = .YER
-        case "ZAR": self = .ZAR
-        case "ZMW": self = .ZMW
-        case "ZWL": self = .ZWL
-        default: return nil
-        }
-    }
-
-    /// Initializes an ISO 4217 currency associated with a given numeric code.
-    ///
-    /// - Important: This initializer only creates ISO 4217 currencies from currencies already defined
-    ///              in the `Money` module. If you were to define a new ISO 4217 currency code with
-    ///              a new numeric code value, this initializer would return `nil`.
-    ///
-    /// - Parameter numericCode: The numeric ISO 4217 currency code
-    @inlinable init?(numericCode: String) {
-        switch numericCode {
-        case "784": self = .AED
-        case "971": self = .AFN
-        case "008": self = .ALL
-        case "051": self = .AMD
-        case "532": self = .ANG
-        case "973": self = .AOA
-        case "032": self = .ARS
-        case "036": self = .AUD
-        case "533": self = .AWG
-        case "944": self = .AZN
-        case "977": self = .BAM
-        case "052": self = .BBD
-        case "050": self = .BDT
-        case "975": self = .BGN
-        case "048": self = .BHD
-        case "108": self = .BIF
-        case "060": self = .BMD
-        case "096": self = .BND
-        case "068": self = .BOB
-        case "984": self = .BOV
-        case "986": self = .BRL
-        case "044": self = .BSD
-        case "064": self = .BTN
-        case "072": self = .BWP
-        case "933": self = .BYN
-        case "084": self = .BZD
-        case "124": self = .CAD
-        case "976": self = .CDF
-        case "947": self = .CHE
-        case "756": self = .CHF
-        case "948": self = .CHW
-        case "990": self = .CLF
-        case "152": self = .CLP
-        case "156": self = .CNY
-        case "170": self = .COP
-        case "970": self = .COU
-        case "188": self = .CRC
-        case "931": self = .CUC
-        case "192": self = .CUP
-        case "132": self = .CVE
-        case "203": self = .CZK
-        case "262": self = .DJF
-        case "208": self = .DKK
-        case "214": self = .DOP
-        case "012": self = .DZD
-        case "818": self = .EGP
-        case "232": self = .ERN
-        case "230": self = .ETB
-        case "978": self = .EUR
-        case "242": self = .FJD
-        case "238": self = .FKP
-        case "826": self = .GBP
-        case "981": self = .GEL
-        case "936": self = .GHS
-        case "292": self = .GIP
-        case "270": self = .GMD
-        case "324": self = .GNF
-        case "320": self = .GTQ
-        case "328": self = .GYD
-        case "344": self = .HKD
-        case "340": self = .HNL
-        case "191": self = .HRK
-        case "332": self = .HTG
-        case "348": self = .HUF
-        case "360": self = .IDR
-        case "376": self = .ILS
-        case "356": self = .INR
-        case "368": self = .IQD
-        case "364": self = .IRR
-        case "352": self = .ISK
-        case "388": self = .JMD
-        case "400": self = .JOD
-        case "392": self = .JPY
-        case "404": self = .KES
-        case "417": self = .KGS
-        case "116": self = .KHR
-        case "174": self = .KMF
-        case "408": self = .KPW
-        case "410": self = .KRW
-        case "414": self = .KWD
-        case "136": self = .KYD
-        case "398": self = .KZT
-        case "418": self = .LAK
-        case "422": self = .LBP
-        case "144": self = .LKR
-        case "430": self = .LRD
-        case "426": self = .LSL
-        case "434": self = .LYD
-        case "504": self = .MAD
-        case "498": self = .MDL
-        case "969": self = .MGA
-        case "807": self = .MKD
-        case "104": self = .MMK
-        case "496": self = .MNT
-        case "446": self = .MOP
-        case "929": self = .MRU
-        case "480": self = .MUR
-        case "462": self = .MVR
-        case "454": self = .MWK
-        case "484": self = .MXN
-        case "458": self = .MYR
-        case "943": self = .MZN
-        case "516": self = .NAD
-        case "566": self = .NGN
-        case "558": self = .NIO
-        case "578": self = .NOK
-        case "524": self = .NPR
-        case "554": self = .NZD
-        case "512": self = .OMR
-        case "590": self = .PAB
-        case "604": self = .PEN
-        case "598": self = .PGK
-        case "608": self = .PHP
-        case "586": self = .PKR
-        case "985": self = .PLN
-        case "600": self = .PYG
-        case "634": self = .QAR
-        case "946": self = .RON
-        case "941": self = .RSD
-        case "643": self = .RUB
-        case "646": self = .RWF
-        case "682": self = .SAR
-        case "090": self = .SBD
-        case "690": self = .SCR
-        case "938": self = .SDG
-        case "752": self = .SEK
-        case "702": self = .SGD
-        case "654": self = .SHP
-        case "694": self = .SLL
-        case "706": self = .SOS
-        case "968": self = .SRD
-        case "728": self = .SSP
-        case "930": self = .STN
-        case "222": self = .SVC
-        case "760": self = .SYP
-        case "748": self = .SZL
-        case "764": self = .THB
-        case "972": self = .TJS
-        case "934": self = .TMT
-        case "788": self = .TND
-        case "776": self = .TOP
-        case "949": self = .TRY
-        case "780": self = .TTD
-        case "901": self = .TWD
-        case "834": self = .TZS
-        case "980": self = .UAH
-        case "800": self = .UGX
-        case "840": self = .USD
-        case "858": self = .UYU
-        case "860": self = .UZS
-        case "937": self = .VEF
-        case "704": self = .VND
-        case "548": self = .VUV
-        case "882": self = .WST
-        case "950": self = .XAF
-        case "961": self = .XAG
-        case "959": self = .XAU
-        case "951": self = .XCD
-        case "952": self = .XOF
-        case "964": self = .XPD
-        case "953": self = .XPF
-        case "962": self = .XPT
-        case "994": self = .XSU
-        case "886": self = .YER
-        case "710": self = .ZAR
-        case "967": self = .ZMW
-        case "932": self = .ZWL
-        default: return nil
-        }
-    }
-}
-
-// MARK: ISO4217Currency + CaseIterable
-
-extension ISO4217Currency: CaseIterable {
-    @inlinable public static var allCases: [ISO4217Currency] {
+    /// An array of all the ISO 4217 currencies defined in the package.
+    /// - Important: Updated 2025-05-12 from [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html)
+    @inlinable public static var predefinedISO4217Currencies: [ISO4217Currency] {
         [
             .AED,
             .AFN,
             .ALL,
             .AMD,
-            .ANG,
             .AOA,
             .ARS,
             .AUD,
@@ -939,7 +535,6 @@ extension ISO4217Currency: CaseIterable {
             .BMD,
             .BND,
             .BOB,
-            .BOV,
             .BRL,
             .BSD,
             .BTN,
@@ -948,16 +543,11 @@ extension ISO4217Currency: CaseIterable {
             .BZD,
             .CAD,
             .CDF,
-            .CHE,
             .CHF,
-            .CHW,
-            .CLF,
             .CLP,
             .CNY,
             .COP,
-            .COU,
             .CRC,
-            .CUC,
             .CUP,
             .CVE,
             .CZK,
@@ -981,7 +571,6 @@ extension ISO4217Currency: CaseIterable {
             .GYD,
             .HKD,
             .HNL,
-            .HRK,
             .HTG,
             .HUF,
             .IDR,
@@ -1048,7 +637,7 @@ extension ISO4217Currency: CaseIterable {
             .SEK,
             .SGD,
             .SHP,
-            .SLL,
+            .SLE,
             .SOS,
             .SRD,
             .SSP,
@@ -1070,25 +659,163 @@ extension ISO4217Currency: CaseIterable {
             .USD,
             .UYU,
             .UZS,
-            .VEF,
+            .VED,
+            .VES,
             .VND,
             .VUV,
             .WST,
             .XAF,
-            .XAG,
-            .XAU,
             .XCD,
+            .XCG,
             .XOF,
-            .XPD,
             .XPF,
-            .XPT,
-            .XSU,
             .YER,
             .ZAR,
             .ZMW,
-            .ZWL,
+            .ZWG,
         ]
     }
 }
 
-// swiftlint:enable line_length function_body_length
+// MARK: - ISO4217CurrencyRegistry
+
+/// A thread-safe registry for custom ISO4217 currencies.
+public final class ISO4217CurrencyRegistry: Sendable {
+
+    // MARK: Key
+
+    /// A key for currency lookups that can be either alphabetic or numeric code.
+    private enum Key: Hashable {
+        case alphabetic(String)
+        case numeric(String)
+    }
+
+    // MARK: Value
+
+    /// A reference wrapper for storing currencies to avoid duplication.
+    private final class Value {
+        let currency: ISO4217Currency
+        init(_ currency: ISO4217Currency) {
+            self.currency = currency
+        }
+    }
+
+    // MARK: Properties
+
+    /// A lock that allows thread-safe access to the registry.
+    private let registryLock = NSRecursiveLock()
+
+    /// A unified lookup table for currencies by their codes.
+    private nonisolated(unsafe) var registry: [Key: Value] = [:]
+
+    /// Returns all currencies currently registered with the registry.
+    public var currencies: Set<ISO4217Currency> {
+        registryLock.lock()
+        defer { registryLock.unlock() }
+        return Set(registry.values.map(\.currency))
+    }
+
+    // MARK: Helpers
+
+    /// Registers the provided currency with the system.
+    ///
+    /// Doing so allows initialization of an ``ISO4217Currency`` using its numeric or alphabetic code.
+    ///
+    /// - Important: Registering a currency that already exists will overwrite the previously registered currency.
+    ///
+    /// - Warning: Registering a currency with the a partial code match will result in the removal of the previous currency.
+    ///            i.e Adding `USD/123` and then adding `USD/512` will result in `USD/512` replacing the currency entirely.
+    ///            No orpahned currencies will be permitted.
+    public func register(_ currency: ISO4217Currency) {
+        registryLock.lock()
+        defer { registryLock.unlock() }
+
+        // Check for existing currency with same numeric code but different alphabetic code
+        if let existingByNumeric = registry[.numeric(currency.numericCode)]?.currency,
+           existingByNumeric.alphabeticCode != currency.alphabeticCode {
+            // Remove the orphaned alphabetic entry
+            registry[.alphabetic(existingByNumeric.alphabeticCode)] = nil
+        }
+
+        // Check for existing currency with same alphabetic code but different numeric code
+        if let existingByAlphabetic = registry[.alphabetic(currency.alphabeticCode)]?.currency,
+           existingByAlphabetic.numericCode != currency.numericCode {
+            // Remove the orphaned numeric entry
+            registry[.numeric(existingByAlphabetic.numericCode)] = nil
+        }
+
+        let value = Value(currency)
+        registry[.numeric(currency.numericCode)] = value
+        registry[.alphabetic(currency.alphabeticCode)] = value
+    }
+
+    /// Unregisters the provided currency with the system.
+    ///
+    /// Doing so removes the ability to initialize the currency using its numeric or alphabetic code.
+    public func unregister(_ currency: ISO4217Currency) {
+        registryLock.lock()
+        defer { registryLock.unlock() }
+
+        registry[.numeric(currency.numericCode)] = nil
+        registry[.alphabetic(currency.alphabeticCode)] = nil
+    }
+
+    /// Returns the registered currency for the provided ISO 4217 numeric code.
+    public func currency(forNumericCode numericCode: String) -> ISO4217Currency? {
+        registryLock.lock()
+        defer { registryLock.unlock() }
+        return registry[.numeric(numericCode)]?.currency
+    }
+
+    /// Returns the registered currency for the provided ISO 4217 alphabetic code.
+    public func currency(forAlphabeticCode alphabeticCode: String) -> ISO4217Currency? {
+        registryLock.lock()
+        defer { registryLock.unlock() }
+        return registry[.alphabetic(alphabeticCode)]?.currency
+    }
+}
+
+// MARK: - ISO4217Currency + Registry
+
+extension ISO4217Currency {
+    /// A registry containing ISO 4217 currency codes.
+    public static let registry: ISO4217CurrencyRegistry = {
+        let registry = ISO4217CurrencyRegistry()
+        for currency in ISO4217Currency.predefinedISO4217Currencies {
+            registry.register(currency)
+        }
+
+        return registry
+    }()
+}
+
+// MARK: ISO4217Currency + Code Initializer
+
+extension ISO4217Currency {
+    /// Initializes an ISO 4217 currency associated with a given alphabetic code.
+    ///
+    /// Currency codes are checked according to a strict, case-sensitive equality comparison.
+    /// This initializer first checks predefined ISO 4217 currencies, then checks any registered custom currencies.
+    ///
+    /// - Parameter alphabeticCode: The alphabetic ISO 4217 currency code
+    init?(alphabeticCode: String, using registry: ISO4217CurrencyRegistry = Self.registry) {
+        guard let currency = registry.currency(forAlphabeticCode: alphabeticCode) else {
+            return nil
+        }
+
+        self = currency
+    }
+
+    /// Initializes an ISO 4217 currency associated with a given numeric code.
+    ///
+    /// This initializer first checks predefined ISO 4217 currencies, then checks any registered custom currencies.
+    ///
+    /// - Parameter numericCode: The numeric ISO 4217 currency code
+    init?(numericCode: String, using registry: ISO4217CurrencyRegistry = Self.registry) {
+        guard let currency = registry.currency(forNumericCode: numericCode) else {
+            return nil
+        }
+
+        self = currency
+    }
+}

@@ -5,15 +5,17 @@
 
 CONFIG = Debug
 
-PLATFORM_IOS = iOS Simulator,id=$(call udid_for,iOS,iPhone \d\+ Pro [^M])
+PLATFORM_IOS = iOS Simulator,id=$(call udid_for,iPhone)
 PLATFORM_MACOS = macOS
 PLATFORM_MAC_CATALYST = macOS,variant=Mac Catalyst
-PLATFORM_TVOS = tvOS Simulator,id=$(call udid_for,tvOS,TV)
-PLATFORM_VISIONOS = visionOS Simulator,id=$(call udid_for,visionOS,Vision)
-PLATFORM_WATCHOS = watchOS Simulator,id=$(call udid_for,watchOS,Watch)
+PLATFORM_TVOS = tvOS Simulator,id=$(call udid_for,TV)
+PLATFORM_VISIONOS = visionOS Simulator,id=$(call udid_for,Vision)
+PLATFORM_WATCHOS = watchOS Simulator,id=$(call udid_for,Watch)
 
 PLATFORM = IOS
 DESTINATION = platform="$(PLATFORM_$(PLATFORM))"
+
+PLATFORM_ID = $(shell echo "$(DESTINATION)" | sed -E "s/.+,id=(.+)/\1/")
 
 SCHEME = Money
 
@@ -36,12 +38,16 @@ else
 	XCODEBUILD = $(XCODEBUILD_COMMAND)
 endif
 
-TEST_RUNNER_CI = $(CI)
+warm-simulator:
+	@test "$(PLATFORM_ID)" != "" \
+		&& xcrun simctl boot $(PLATFORM_ID) \
+		&& open -a Simulator --args -CurrentDeviceUDID $(PLATFORM_ID) \
+		|| exit 0
 
-xcodebuild:
+xcodebuild: warm-simulator
 	$(XCODEBUILD)
 
-xcodebuild-raw:
+xcodebuild-raw: warm-simulator
 	$(XCODEBUILD_COMMAND)
 
 development:
@@ -57,5 +63,5 @@ lint-fix:
 .PHONY: xcodebuild lint
 
 define udid_for
-$(shell xcrun simctl list devices available '$(1)' | grep '$(2)' | sort -r | head -1 | awk -F '[()]' '{ print $$(NF-3) }')
+$(shell xcrun simctl list --json devices available '$(1)' | jq -r '[.devices|to_entries|sort_by(.key)|reverse|.[].value|select(length > 0)|.[0]][0].udid')
 endef

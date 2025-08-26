@@ -1,10 +1,8 @@
-# SwiftLint configuration file for the Storybook repository.
+# SwiftLint configuration file for the swift-money repository.
 # Run `swiftlint --fix` at the root of the repository to format all code.
 
 # MARK: - Settings
 
-#included:
-#    - *.swift
 excluded:
     - "**/.build"
 
@@ -12,7 +10,7 @@ excluded:
 allow_zero_lintable_files: false
 
 # If true, SwiftLint will treat all warnings as errors.
-strict: false
+strict: true
 
 # If true, SwiftLint will check for updates after linting or analyzing.
 check_for_updates: true
@@ -38,7 +36,9 @@ disabled_rules:
     - shorthand_operator
     - todo
     - type_body_length
+    - unused_closure_parameter
     - void_function_in_ternary
+    - indentation_width
 
 opt_in_rules:
     - closure_end_indentation
@@ -81,7 +81,6 @@ opt_in_rules:
     - optional_enum_case_matching
     - overridden_super_call
     - override_in_extension
-    - prefer_self_in_static_references
     - prefer_self_type_over_type_of_self
     - prefer_zero_over_explicit_init
     - private_swiftui_state

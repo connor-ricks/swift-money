@@ -1,20 +1,24 @@
 @testable import Money
-import XCTest
+import Testing
 
-final class CurrencyTests: XCTestCase {
-    func test_isEqual_betweenTwoCurrenciesOfDifferentTypes_isNotEqual() {
+@Suite
+struct CurrencyTests {
+    @Test
+    func isEqual_betweenTwoCurrenciesOfDifferentTypes_isNotEqual() {
         let foo = MockCurrency.foo
         let bar = ISO4217Currency.USD
-        XCTAssertFalse(foo.isEqual(to: bar))
+        #expect(foo.isEqual(to: bar) == false)
     }
 
-    func test_isEqual_betweenTwoDifferentCurrenciesOfSameType_isNotEqual() {
+    @Test
+    func isEqual_betweenTwoDifferentCurrenciesOfSameType_isNotEqual() {
         let foo = MockCurrency.foo
         let bar = MockCurrency.bar
-        XCTAssertFalse(foo.isEqual(to: bar))
+        #expect(foo.isEqual(to: bar) == false)
     }
 
-    func test_isEqual_betweenTwoSameCurrencies_isEqual() {
-        XCTAssertTrue(MockCurrency.foo.isEqual(to: .foo))
+    @Test
+    func isEqual_betweenTwoSameCurrencies_isEqual() {
+        #expect(MockCurrency.foo.isEqual(to: .foo) == true)
     }
 }
