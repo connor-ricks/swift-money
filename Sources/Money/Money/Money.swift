@@ -58,6 +58,16 @@ extension Money: CustomStringConvertible {
     }
 }
 
+// MARK: - Money + Hashable
+
+extension Money: Hashable {
+    @inlinable
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(currency.hashValue)
+        hasher.combine(amount)
+    }
+}
+
 // MARK: - Money + Equatable
 
 extension Money: Equatable {
