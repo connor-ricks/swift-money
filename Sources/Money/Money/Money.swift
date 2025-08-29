@@ -396,7 +396,7 @@ extension Money {
     /// Localized the monetary value using
     /// - Important: If no scale is provided, the currency's minor units are used.
     ///
-    func localizedString(
+    public func localizedString(
         locale: Locale = .autoupdatingCurrent,
         scale: Int? = nil,
         rounding: NSDecimalNumber.RoundingMode = .bankers,
