@@ -495,6 +495,9 @@ extension Currency where Self == ISO4217Currency {
     /// Caribbean Guilder (XCG) or (532)
     @inlinable public static var XCG: ISO4217Currency { .init(alphabeticCode: "XCG", numericCode: "532", minorUnits: 2, name: "Caribbean Guilder") }
 
+    /// Special Drawing Rights (XDR) or (960)
+    @inlinable public static var XDR: ISO4217Currency { .init(alphabeticCode: "XDR", numericCode: "960", minorUnits: 0, name: "Special Drawing Rights") }
+
     /// CFA Franc BCEAO (XOF) or (952)
     @inlinable public static var XOF: ISO4217Currency { .init(alphabeticCode: "XOF", numericCode: "952", minorUnits: 0, name: "CFA Franc BCEAO") }
 
@@ -667,6 +670,7 @@ extension Currency where Self == ISO4217Currency {
             .XAF,
             .XCD,
             .XCG,
+            .XDR,
             .XOF,
             .XPF,
             .YER,
