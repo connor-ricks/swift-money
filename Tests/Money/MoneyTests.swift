@@ -350,6 +350,39 @@ struct MoneyTests {
         #expect(Money(amount: 19.25, currency: .EUR).localizedString(locale: locale) == "19,25 €")
         #expect(Money(amount: 12_250.25, currency: .EUR).localizedString(locale: locale) == "12 250,25 €")
     }
+
+    // MARK: Minor Unit Tests
+
+    @Test
+    func money_minorUnits() async throws {
+        let foo = MockCurrency(id: "foo", minorUnits: 1)
+        #expect(Money(minorUnits: 154_234, currency: foo).minorUnits == 154_234)
+        #expect(Money(minorUnits: 999_999_999_999, currency: foo).minorUnits == 999_999_999_999)
+        #expect(Money(minorUnits: -24_323, currency: foo).minorUnits == -24_323)
+        #expect(Money(minorUnits: -999_999_999_999, currency: foo).minorUnits == -999_999_999_999)
+        #expect(Money(minorUnits: 0, currency: foo).minorUnits == 0)
+
+        let bar = MockCurrency(id: "bar", minorUnits: 2)
+        #expect(Money(minorUnits: 154_234, currency: bar).minorUnits == 154_234)
+        #expect(Money(minorUnits: 999_999_999_999, currency: bar).minorUnits == 999_999_999_999)
+        #expect(Money(minorUnits: -24_323, currency: bar).minorUnits == -24_323)
+        #expect(Money(minorUnits: -999_999_999_999, currency: bar).minorUnits == -999_999_999_999)
+        #expect(Money(minorUnits: 0, currency: bar).minorUnits == 0)
+
+        let baz = MockCurrency(id: "baz", minorUnits: 3)
+        #expect(Money(minorUnits: 154_234, currency: baz).minorUnits == 154_234)
+        #expect(Money(minorUnits: 999_999_999_999, currency: baz).minorUnits == 999_999_999_999)
+        #expect(Money(minorUnits: -24_323, currency: baz).minorUnits == -24_323)
+        #expect(Money(minorUnits: -999_999_999_999, currency: baz).minorUnits == -999_999_999_999)
+        #expect(Money(minorUnits: 0, currency: baz).minorUnits == 0)
+
+        let qux = MockCurrency(id: "qux", minorUnits: 0)
+        #expect(Money(minorUnits: 154_234, currency: qux).minorUnits == 154_234)
+        #expect(Money(minorUnits: 999_999_999_999, currency: qux).minorUnits == 999_999_999_999)
+        #expect(Money(minorUnits: -24_323, currency: qux).minorUnits == -24_323)
+        #expect(Money(minorUnits: -999_999_999_999, currency: qux).minorUnits == -999_999_999_999)
+        #expect(Money(minorUnits: 0, currency: qux).minorUnits == 0)
+    }
 }
 
 // swiftlint:enable shorthand_operator

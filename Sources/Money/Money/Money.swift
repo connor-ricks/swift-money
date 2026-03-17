@@ -65,6 +65,31 @@ public struct Money: Sendable {
     }
 }
 
+// MARK: - Money + Minor Units
+
+extension Money {
+    /// Provides the monetary value as minor units of the currency.
+    /// - Warning: Can fail if the number is greater than representable as an `Int`.
+    @inlinable
+    public var minorUnits: Int {
+        let multiplier = Decimal(
+            sign: .plus,
+            exponent: currency.minorUnits,
+            significand: 1
+        )
+
+        var shifted = amount * multiplier
+        var rounded = Decimal()
+        NSDecimalRound(&rounded, &shifted, 0, .plain)
+
+        guard let minorUnits = Int(exactly: NSDecimalNumber(decimal: rounded)) else {
+            preconditionFailure("Money amount \(amount) \(currency) exceeds Int range")
+        }
+
+        return minorUnits
+    }
+}
+
 // MARK: - Money + CustomStringConvertible
 
 extension Money: CustomStringConvertible {
