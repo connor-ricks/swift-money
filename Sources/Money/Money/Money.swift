@@ -441,17 +441,18 @@ extension Money {
         locale: Locale = .autoupdatingCurrent,
         scale: Int? = nil,
         rounding: NSDecimalNumber.RoundingMode = .bankers,
-        sign: Decimal.FormatStyle.Currency.Configuration.SignDisplayStrategy = .automatic
+        sign: Decimal.FormatStyle.Currency.Configuration.SignDisplayStrategy = .automatic,
+        notation: Decimal.FormatStyle.Currency.Configuration.Notation = .automatic
     ) -> String {
         let style = Decimal.FormatStyle.Currency
             .currency(code: currency.id)
             .locale(locale)
-            .precision(.fractionLength(scale ?? currency.minorUnits))
             .sign(strategy: .never)
             .decimalSeparator(strategy: .automatic)
             .grouping(.automatic)
             .presentation(.standard)
             .sign(strategy: sign)
+            .notation(notation)
 
         let money = rounded(scale: scale ?? currency.minorUnits, mode: rounding)
         return style.format(money.amount)

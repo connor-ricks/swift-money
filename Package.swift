@@ -1,16 +1,16 @@
-// swift-tools-version: 6.0
+// swift-tools-version: 6.3
 
 import PackageDescription
 
 let package = Package(
     name: "swift-money",
     platforms: [
-        .iOS(.v15),
+        .iOS(.v18),
         .macOS(.v15),
-        .macCatalyst(.v15),
-        .tvOS(.v15),
-        .watchOS(.v8),
-        .visionOS(.v1),
+        .macCatalyst(.v18),
+        .tvOS(.v18),
+        .watchOS(.v11),
+        .visionOS(.v2),
     ],
     products: [
         .library(name: "Money", targets: ["Money"]),
