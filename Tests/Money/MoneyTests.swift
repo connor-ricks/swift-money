@@ -306,49 +306,49 @@ struct MoneyTests {
     @Test
     func usd_localize_enUS() {
         let locale = Locale(identifier: "en-US")
-        #expect(Money(amount: -12_250.25, currency: .USD).localizedString(locale: locale) == "-$12,250.25")
-        #expect(Money(amount: -19.25, currency: .USD).localizedString(locale: locale) == "-$19.25")
-        #expect(Money(amount: -19, currency: .USD).localizedString(locale: locale) == "-$19.00")
-        #expect(Money(amount: 0, currency: .USD).localizedString(locale: locale) == "$0.00")
-        #expect(Money(amount: 19, currency: .USD).localizedString(locale: locale) == "$19.00")
-        #expect(Money(amount: 19.25, currency: .USD).localizedString(locale: locale) == "$19.25")
-        #expect(Money(amount: 12_250.25, currency: .USD).localizedString(locale: locale) == "$12,250.25")
+        #expect(Money(amount: -12_250.25, currency: .USD).formatted(.money(locale: locale)) == "-$12,250.25")
+        #expect(Money(amount: -19.25, currency: .USD).formatted(.money(locale: locale)) == "-$19.25")
+        #expect(Money(amount: -19, currency: .USD).formatted(.money(locale: locale)) == "-$19.00")
+        #expect(Money(amount: 0, currency: .USD).formatted(.money(locale: locale)) == "$0.00")
+        #expect(Money(amount: 19, currency: .USD).formatted(.money(locale: locale)) == "$19.00")
+        #expect(Money(amount: 19.25, currency: .USD).formatted(.money(locale: locale)) == "$19.25")
+        #expect(Money(amount: 12_250.25, currency: .USD).formatted(.money(locale: locale)) == "$12,250.25")
     }
 
     @Test
     func usd_localize_frFR() {
         let locale = Locale(identifier: "fr-FR")
-        #expect(Money(amount: -12_250.25, currency: .USD).localizedString(locale: locale) == "-12 250,25 $US")
-        #expect(Money(amount: -19.25, currency: .USD).localizedString(locale: locale) == "-19,25 $US")
-        #expect(Money(amount: -19, currency: .USD).localizedString(locale: locale) == "-19,00 $US")
-        #expect(Money(amount: 0, currency: .USD).localizedString(locale: locale) == "0,00 $US")
-        #expect(Money(amount: 19, currency: .USD).localizedString(locale: locale) == "19,00 $US")
-        #expect(Money(amount: 19.25, currency: .USD).localizedString(locale: locale) == "19,25 $US")
-        #expect(Money(amount: 12_250.25, currency: .USD).localizedString(locale: locale) == "12 250,25 $US")
+        #expect(Money(amount: -12_250.25, currency: .USD).formatted(.money(locale: locale)) == "-12 250,25 $US")
+        #expect(Money(amount: -19.25, currency: .USD).formatted(.money(locale: locale)) == "-19,25 $US")
+        #expect(Money(amount: -19, currency: .USD).formatted(.money(locale: locale)) == "-19,00 $US")
+        #expect(Money(amount: 0, currency: .USD).formatted(.money(locale: locale)) == "0,00 $US")
+        #expect(Money(amount: 19, currency: .USD).formatted(.money(locale: locale)) == "19,00 $US")
+        #expect(Money(amount: 19.25, currency: .USD).formatted(.money(locale: locale)) == "19,25 $US")
+        #expect(Money(amount: 12_250.25, currency: .USD).formatted(.money(locale: locale)) == "12 250,25 $US")
     }
 
     @Test
     func eur_localize_enUS() {
         let locale = Locale(identifier: "en-US")
-        #expect(Money(amount: -12_250.25, currency: .EUR).localizedString(locale: locale) == "-€12,250.25")
-        #expect(Money(amount: -19.25, currency: .EUR).localizedString(locale: locale) == "-€19.25")
-        #expect(Money(amount: -19, currency: .EUR).localizedString(locale: locale) == "-€19.00")
-        #expect(Money(amount: 0, currency: .EUR).localizedString(locale: locale) == "€0.00")
-        #expect(Money(amount: 19, currency: .EUR).localizedString(locale: locale) == "€19.00")
-        #expect(Money(amount: 19.25, currency: .EUR).localizedString(locale: locale) == "€19.25")
-        #expect(Money(amount: 12_250.25, currency: .EUR).localizedString(locale: locale) == "€12,250.25")
+        #expect(Money(amount: -12_250.25, currency: .EUR).formatted(.money(locale: locale)) == "-€12,250.25")
+        #expect(Money(amount: -19.25, currency: .EUR).formatted(.money(locale: locale)) == "-€19.25")
+        #expect(Money(amount: -19, currency: .EUR).formatted(.money(locale: locale)) == "-€19.00")
+        #expect(Money(amount: 0, currency: .EUR).formatted(.money(locale: locale)) == "€0.00")
+        #expect(Money(amount: 19, currency: .EUR).formatted(.money(locale: locale)) == "€19.00")
+        #expect(Money(amount: 19.25, currency: .EUR).formatted(.money(locale: locale)) == "€19.25")
+        #expect(Money(amount: 12_250.25, currency: .EUR).formatted(.money(locale: locale)) == "€12,250.25")
     }
 
     @Test
     func eur_localize_frFR() {
         let locale = Locale(identifier: "fr-FR")
-        #expect(Money(amount: -12_250.25, currency: .EUR).localizedString(locale: locale) == "-12 250,25 €")
-        #expect(Money(amount: -19.25, currency: .EUR).localizedString(locale: locale) == "-19,25 €")
-        #expect(Money(amount: -19, currency: .EUR).localizedString(locale: locale) == "-19,00 €")
-        #expect(Money(amount: 0, currency: .EUR).localizedString(locale: locale) == "0,00 €")
-        #expect(Money(amount: 19, currency: .EUR).localizedString(locale: locale) == "19,00 €")
-        #expect(Money(amount: 19.25, currency: .EUR).localizedString(locale: locale) == "19,25 €")
-        #expect(Money(amount: 12_250.25, currency: .EUR).localizedString(locale: locale) == "12 250,25 €")
+        #expect(Money(amount: -12_250.25, currency: .EUR).formatted(.money(locale: locale)) == "-12 250,25 €")
+        #expect(Money(amount: -19.25, currency: .EUR).formatted(.money(locale: locale)) == "-19,25 €")
+        #expect(Money(amount: -19, currency: .EUR).formatted(.money(locale: locale)) == "-19,00 €")
+        #expect(Money(amount: 0, currency: .EUR).formatted(.money(locale: locale)) == "0,00 €")
+        #expect(Money(amount: 19, currency: .EUR).formatted(.money(locale: locale)) == "19,00 €")
+        #expect(Money(amount: 19.25, currency: .EUR).formatted(.money(locale: locale)) == "19,25 €")
+        #expect(Money(amount: 12_250.25, currency: .EUR).formatted(.money(locale: locale)) == "12 250,25 €")
     }
 
     // MARK: Minor Unit Tests

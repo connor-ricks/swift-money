@@ -434,9 +434,10 @@ extension Money {
 }
 
 extension Money {
-    /// Localized the monetary value using
-    /// - Important: If no scale is provided, the currency's minor units are used.
+    /// Returns a localized string representation of the monetary value.
     ///
+    /// - Important: If no scale is provided, the currency's minor units are used.
+    @available(*, deprecated, message: "Use formatted(_:) with .money, e.g. money.formatted(.money(...))")
     public func localizedString(
         locale: Locale = .autoupdatingCurrent,
         scale: Int? = nil,
@@ -444,17 +445,12 @@ extension Money {
         sign: Decimal.FormatStyle.Currency.Configuration.SignDisplayStrategy = .automatic,
         notation: Decimal.FormatStyle.Currency.Configuration.Notation = .automatic
     ) -> String {
-        let style = Decimal.FormatStyle.Currency
-            .currency(code: currency.id)
-            .locale(locale)
-            .sign(strategy: .never)
-            .decimalSeparator(strategy: .automatic)
-            .grouping(.automatic)
-            .presentation(.standard)
-            .sign(strategy: sign)
-            .notation(notation)
-
-        let money = rounded(scale: scale ?? currency.minorUnits, mode: rounding)
-        return style.format(money.amount)
+        formatted(.money(
+            locale: locale,
+            scale: scale,
+            rounding: rounding,
+            sign: sign,
+            notation: notation
+        ))
     }
 }
